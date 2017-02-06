@@ -12,7 +12,7 @@ double biseccion(vFunctionCall fun, double x0, double x1) {
   double y0 = fun(x0);
   double y1 = fun(x1);
 
-  if (y0 <= 0 && y1 <= 0) || (y0 >= 0 && y1 >= 0) {
+  if ((y0 <= 0 && y1 <= 0) || (y0 >= 0 && y1 >= 0)) {
     throw invalid_argument("received f(x0) and f(x1) of same sign");
   }
 
@@ -33,7 +33,7 @@ double biseccion(vFunctionCall fun, double x0, double x1) {
       return x;
     }
 
-    if (y <= 0 && y0 <= 0) || (y >= 0 && y0 >= 0) {
+    if ((y <= 0 && y0 <= 0) || (y >= 0 && y0 >= 0)) {
       // go left
       x0 = x;
       y0 = y;
